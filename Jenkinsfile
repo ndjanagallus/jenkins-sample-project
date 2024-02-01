@@ -15,6 +15,12 @@ pipeline {
                 // Add test commands here
             }
         }
+
+        stage('Env vars') {
+          steps {
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            }
+        }
         
         stage('Deploy') {
             steps {
